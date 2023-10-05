@@ -1208,7 +1208,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1281,9 +1281,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0418\u043C\u044F \u0432\u0440\u0430\u0433\u0430"
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2207d216176044ca9a94a13dec69b891, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1347,7 +1347,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &801292404
@@ -2153,7 +2153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1e70af88a7247ca93f3b08ef96150e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadWindow: {fileID: 2089844261}
   _playerName: {fileID: 2075796820}
+  _enemyName: {fileID: 801292403}
+  _enemyImage: {fileID: 775062110}
 --- !u!1 &1774153790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,7 +2317,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1788664494}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1668234419}
+        m_TargetAssemblyTypeName: EnemySearch, Assembly-CSharp
+        m_MethodName: SearchButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1788664494
 MonoBehaviour:
   m_ObjectHideFlags: 0
