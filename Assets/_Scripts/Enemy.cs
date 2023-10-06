@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private GameObject _resultsWindow;
     [SerializeField] private TMP_Text _enemyName;
     [SerializeField] private Image _healthBar;
     private int _enemyHealth;
@@ -25,9 +26,12 @@ public class Enemy : MonoBehaviour
         {
             int hitPower = Random.Range(5, 11);
             _currentHealth -= hitPower;
-
             _healthBar.fillAmount = _currentHealth / _enemyHealth;
-            Debug.Log($"currentHealth {_currentHealth} / _enemyHealth {_enemyHealth} = {_currentHealth / _enemyHealth}");
+            //Debug.Log($"currentHealth {_currentHealth} / _enemyHealth {_enemyHealth} = {_currentHealth / _enemyHealth}");
+            if (_currentHealth <= 0)
+            {
+                _resultsWindow.SetActive(true);
+            }
         }
     }
 }
