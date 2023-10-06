@@ -38,6 +38,7 @@ public class EnemySearch : MonoBehaviour
     [SerializeField] private TMP_Text _playerName;
     [SerializeField] private TMP_Text _enemyName;
     [SerializeField] private Image _enemyImage;
+    [SerializeField] private TMP_Text _coinsText;
 
     private string _url = "https://randomuser.me/api/";
 
@@ -45,7 +46,10 @@ public class EnemySearch : MonoBehaviour
     {
         string playerName = PlayerPrefs.GetString("PlayerName", "");
         _playerName.text = playerName;
+        int coinsQuantity = PlayerPrefs.GetInt("Coins", 0);
+        _coinsText.text = coinsQuantity.ToString();
         SearchButton();
+
     }
 
     public void FightButton()

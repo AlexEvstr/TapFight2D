@@ -2157,6 +2157,7 @@ MonoBehaviour:
   _playerName: {fileID: 2075796820}
   _enemyName: {fileID: 801292403}
   _enemyImage: {fileID: 775062110}
+  _coinsText: {fileID: 695018932}
 --- !u!1 &1774153790
 GameObject:
   m_ObjectHideFlags: 0
