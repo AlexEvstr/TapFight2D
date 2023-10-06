@@ -59,11 +59,12 @@ public class EnemySearch : MonoBehaviour
         UnityWebRequest request = UnityWebRequest.Get(_url);
         yield return request.SendWebRequest();
         string myJsonResponse = request.downloadHandler.text;
-        Debug.Log(myJsonResponse);
-        Debug.Log("-----------------------------------------------------------------------------");
+        //Debug.Log(myJsonResponse);
+        //Debug.Log("-----------------------------------------------------------------------------");
         Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
         string enemyName = myDeserializedClass.results[0].name.first;
         _enemyName.text = enemyName;
+        PlayerPrefs.SetString("EnemyName", enemyName);
         string enemyImage = myDeserializedClass.results[0].picture.medium;
         //Debug.Log(myDeserializedClass.results[0].name.first);
         //Debug.Log(myDeserializedClass.results[0].picture.medium);
