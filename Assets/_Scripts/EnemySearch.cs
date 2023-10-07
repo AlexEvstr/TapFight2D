@@ -60,6 +60,7 @@ public class EnemySearch : MonoBehaviour
     private IEnumerator SendRequest()
     {
         _loadWindow.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         UnityWebRequest request = UnityWebRequest.Get(_url);
         yield return request.SendWebRequest();
         string myJsonResponse = request.downloadHandler.text;
