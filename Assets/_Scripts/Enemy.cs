@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -27,7 +25,6 @@ public class Enemy : MonoBehaviour
             int hitPower = Random.Range(5, 11);
             _currentHealth -= hitPower;
             _healthBar.fillAmount = _currentHealth / _enemyHealth;
-            //Debug.Log($"currentHealth {_currentHealth} / _enemyHealth {_enemyHealth} = {_currentHealth / _enemyHealth}");
             if (_currentHealth <= 0)
             {
                 _resultsWindow.SetActive(true);
