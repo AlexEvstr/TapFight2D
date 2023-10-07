@@ -61,13 +61,16 @@ public class EnemySearch : MonoBehaviour
     {
         _loadWindow.SetActive(true);
         yield return new WaitForSeconds(0.5f);
+
         UnityWebRequest request = UnityWebRequest.Get(_url);
         yield return request.SendWebRequest();
         string myJsonResponse = request.downloadHandler.text;
         Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+
         string enemyName = myDeserializedClass.results[0].name.first;
         _enemyName.text = enemyName;
         PlayerPrefs.SetString("EnemyName", enemyName);
+
         string enemyImage = myDeserializedClass.results[0].picture.medium;
         UnityWebRequest webRequest = UnityWebRequestTexture.GetTexture(enemyImage);
         yield return webRequest.SendWebRequest();
